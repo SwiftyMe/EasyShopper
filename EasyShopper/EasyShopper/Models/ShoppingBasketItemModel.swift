@@ -1,5 +1,5 @@
 //
-//  Product.swift
+//  ShoppingBasket.swift
 //  EasyShopper
 //
 //  Created by Morten Bek Ditlevsen on 11/06/2020.
@@ -8,7 +8,9 @@
 
 import Foundation
 
-struct Product: Decodable {
-    var id: String
-    #warning("Complete this data structure")
+struct ShoppingBasketItemModel: Decodable {
+
+    var product: ProductModel
+    var count: Int
 }
+
