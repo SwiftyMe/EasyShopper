@@ -34,6 +34,7 @@ class APIService: APIServiceProducts {
     
     typealias Error = APIServiceError
     
+    /// The one and only singleton instance
     static var ServiceProducts: APIServiceProducts {
         return shared
     }
@@ -53,7 +54,7 @@ class APIService: APIServiceProducts {
         .eraseToAnyPublisher()
     }
 
-    /// Privates
+    // MARK: Private
    
     private static let shared = APIService()
 }
@@ -75,10 +76,10 @@ extension APIService.Error {
     var localizedDescription: String {
         switch self {
             
-            //TODO: Add non-general error messages
+            // TODO: Add non-general error messages
         
             case let .Network(HTTPServiceError):
-                if case let HTTPService.Error.HTTPCode(code) = HTTPServiceError {
+                if case HTTPService.Error.HTTPCode(let code) = HTTPServiceError {
                     if code == 403 {
                         return HTTPServiceError.localizedDescription + "\n\n TODO: Add message"
                     }
