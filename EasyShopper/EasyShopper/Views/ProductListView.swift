@@ -22,7 +22,7 @@ struct ProductListView: View {
     
     var body: some View {
         
-        VStack {
+        VStack(alignment: .leading, spacing:0) {
             
             HStack {
                 
